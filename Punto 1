@@ -1,0 +1,25 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+     
+        Console.WriteLine("Ingrese el primer número:");
+        int num1 = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Ingrese el segundo número:");
+        int num2 = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Ingrese el tercer número:");
+        int num3 = int.Parse(Console.ReadLine());
+
+        
+        int max = Math.Max(num1, Math.Max(num2, num3));
+        int min = Math.Min(num1, Math.Min(num2, num3));
+
+        
+        Console.WriteLine("El número mayor es: " + max);
+        Console.WriteLine("El número menor es: " + min);
+    }
+}
