@@ -1,0 +1,44 @@
+using System;
+
+class Program
+{
+    static bool EsPrimo(int num)
+    {
+        if (num <= 1)
+            return false;
+        if (num <= 3)
+            return true;
+
+        if (num % 2 == 0 || num % 3 == 0)
+            return false;
+
+        for (int i = 5; i * i <= num; i += 6)
+        {
+            if (num % i == 0 || num % (i + 2) == 0)
+                return false;
+        }
+
+        return true;
+    }
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Ingrese la cantidad de números primos que desea generar:");
+        int cantidad = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine($"Los primeros {cantidad} números primos son:");
+
+        int numero = 2;
+        int contador = 0;
+
+        while (contador < cantidad)
+        {
+            if (EsPrimo(numero))
+            {
+                Console.Write(numero + " ");
+                contador++;
+            }
+            numero++;
+        }
+    }
+}
